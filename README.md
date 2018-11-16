@@ -22,7 +22,7 @@ import 'angular';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
 
 angular
-  .modue('myApp', [
+  .module('myApp', [
     …,
     webUniverseComponents;
     …,
