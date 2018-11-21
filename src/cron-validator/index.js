@@ -5,7 +5,8 @@ import WucCronValidator from './cron-validator';
 const moduleName = 'wucCronValidator';
 
 angular
-  .module(moduleName, [])
+  .module(moduleName, [
+  ])
   .service('WucCronValidator', WucCronValidator);
 
 export default moduleName;
