@@ -1,6 +1,6 @@
+import angular from 'angular';
 import $ from 'jquery';
 import _ from 'lodash';
-import angular from 'angular';
 
 import template from './file-editor.html';
 
