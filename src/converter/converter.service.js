@@ -1,11 +1,9 @@
 import _ from 'lodash';
 
 export default class {
+  /* @ngInject */
   constructor($translate, WucConverterFactory) {
-    'ngInject';
-
     this.$translate = $translate;
-
     this.WucConverterFactory = WucConverterFactory;
   }
 

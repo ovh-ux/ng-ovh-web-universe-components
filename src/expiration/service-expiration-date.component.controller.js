@@ -3,9 +3,8 @@ import angular from 'angular';
 import moment from 'moment';
 
 export default class {
+  /* @ngInject */
   constructor($scope, $rootScope) {
-    'ngInject';
-
     $scope.tr = $rootScope.tr;
   }
 

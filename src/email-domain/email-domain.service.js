@@ -1,14 +1,13 @@
 import _ from 'lodash';
 
 export default class {
+  /* @ngInject */
   /**
    * Constructor
    * @param $q
    * @param OvhHttp
    */
   constructor($q, OvhHttp, Poller) {
-    'ngInject';
-
     this.$q = $q;
     this.OvhHttp = OvhHttp;
     this.Poller = Poller;
