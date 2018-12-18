@@ -35,6 +35,10 @@ angular
 yarn test
 ```
 
+## Related
+
+* [ovh-manager-web](https://github.com/ovh-ux/ovh-manager-web) - OVH Control Panel Web UI
+
 ## Contributing
 
 Always feel free to help out! Whether it's [filing bugs and feature requests](https://github.com/ovh-ux/web-universe-components/issues/new) or working on some of the [open issues](https://github.com/ovh-ux/web-universe-components/issues), our [contributing guide](CONTRIBUTING.md) will help get you started.
