@@ -1,14 +1,14 @@
 <div class="expiration clearfix">
-    <span data-ng-if="$ctrl.isAutoRenew() && !$ctrl.isExpired()"
+    <span data-ng-if="$ctrl.isInAutoRenew() && !$ctrl.isExpired()"
           data-ng-bind-html=":: 'expiration_renew_date' | translate: { t0: ($ctrl.serviceInfos.expiration|date:'MMM yyyy') }"></span>
-    <span data-ng-if="!$ctrl.isAutoRenew() && !$ctrl.isExpired()"
-          data-ng-bind-html=":: ($ctrl.serviceInfos.renew.deleteAtExpiration ? 'expiration_resiliation_date' : 'expiration_expiration_date') | translate: { t0: ($ctrl.serviceInfos.expiration|date:'mediumDate') }"></span>
+    <span data-ng-if="!$ctrl.isInAutoRenew() && !$ctrl.isExpired()"
+          data-ng-bind-html=":: ($ctrl.hasBeenTerminated() ? 'expiration_resiliation_date' : 'expiration_expiration_date') | translate: { t0: ($ctrl.serviceInfos.expiration|date:'mediumDate') }"></span>
     <span data-ng-if="$ctrl.isExpired()"
           data-ng-bind-html=":: 'expiration_expired_date' | translate: { t0: ($ctrl.serviceInfos.expiration|date:'mediumDate') }"></span>
 
     <a class="ml-3"
-       data-ng-if="::(!$ctrl.isAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || $ctrl.isExpired()"
-       data-ng-switch="$ctrl.serviceInfos.renew.deleteAtExpiration"
+       data-ng-if="::(!$ctrl.isInAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || $ctrl.isExpired()"
+       data-ng-switch="$ctrl.hasBeenTerminated()"
        data-ng-href="{{::$ctrl.getRenewUrl()}}"
        data-track-on="click"
        data-track-name="renew-{{::$ctrl.serviceType.toLowerCase()}}"

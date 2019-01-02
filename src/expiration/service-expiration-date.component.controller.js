@@ -48,11 +48,12 @@ export default class {
     return '';
   }
 
-  isAutoRenew() {
-    return (
-      this.serviceInfos.renew
-      && (this.serviceInfos.renew.automatic || this.serviceInfos.renew.forced)
-    );
+  isInAutoRenew() {
+    return _.get(this.serviceInfos, 'renew.automatic') || _.get(this.serviceInfos, 'renew.forced');
+  }
+
+  hasBeenTerminated() {
+    return this.isInAutoRenew() && _.get(this.serviceInfos, 'renew.deleteAtExpiration');
   }
 
   isExpired() {
