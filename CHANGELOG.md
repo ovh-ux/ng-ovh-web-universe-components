@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/ovh-ux/web-universe-components/compare/v1.1.0-beta.0...v1.1.0) (2019-01-02)
+
+
+### Bug Fixes
+
+* **deps:** add missing peer dependencies ([#10](https://github.com/ovh-ux/web-universe-components/issues/10)) ([e27c2b7](https://github.com/ovh-ux/web-universe-components/commit/e27c2b7))
+
+
+
 # [1.1.0-beta.0](https://github.com/ovh-ux/web-universe-components/compare/v1.0.0...v1.1.0-beta.0) (2018-12-18)
 
 
