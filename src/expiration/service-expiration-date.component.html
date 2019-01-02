@@ -9,7 +9,7 @@
           data-translate="expiration_expired_date"
           data-translate-values="{ t0: ($ctrl.serviceInfos.expiration | date:'mediumDate') }"></span>
 
-    <a class="ml-3"
+    <a class="oui-link"
        data-ng-if="::(!$ctrl.isInAutoRenew() && $ctrl.getRenewUrl() && !$ctrl.hideRenewAction) || $ctrl.isExpired()"
        data-ng-switch="$ctrl.hasBeenTerminated()"
        data-ng-href="{{::$ctrl.getRenewUrl()}}"
