@@ -912,10 +912,10 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
-"@ovh-ux/ovh-utils-angular@^14.0.2-alpha.0":
-  version "14.0.2-alpha.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-14.0.2-alpha.0.tgz#1ccd54944c65660688cc0585df3b4b56f1bde8ff"
-  integrity sha512-GQdhs1p7Po7wCMPosxB7mEecsXtsjA0dblak6UBK1VfhRUugochKPNC91+2iwFLLe2rcsuq3UAp+FJ8VQJaFJA==
+"@ovh-ux/ovh-utils-angular@^14.0.2":
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ovh-utils-angular/-/ovh-utils-angular-14.0.2.tgz#837fbfcd093287971aa6d0733a1bbad0e008e8e7"
+  integrity sha512-mJPo16TErF948lbvS6JBeue9HjqN29C6ub5Hl++61CuSYTDeNTHIsXELC4TW1QiNP7otGZm93jf2Fb0ZMsjTbg==
   dependencies:
     "@ovh-ux/translate-async-loader" "^1.0.4"
     filesize "^3.6.1"
