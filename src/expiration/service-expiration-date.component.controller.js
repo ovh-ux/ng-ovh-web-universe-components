@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import {
   DEFAULT_TARGET,
-  RENEW_URL
+  RENEW_URL,
 } from './service-expiration-date.component.constant';
 
 export default class {
@@ -27,7 +27,7 @@ export default class {
     return this.getOrderUrl()
       .finally(() => {
         this.loading = false;
-      })
+      });
   }
 
   getCancelTerminationUrl() {
@@ -41,8 +41,8 @@ export default class {
   getOrderUrl() {
     return this.OvhApiMe.v6().get().$promise
       .then(({ ovhSubsidiary }) => {
-        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`
-      })
+        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
+      });
   }
 
   getExpirationClass() {
