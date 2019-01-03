@@ -30,7 +30,7 @@ export default class {
       })
   }
 
-  getRenewUrl() {
+  getCancelTerminationUrl() {
     const url = `#/billing/autoRenew?searchText=${this.serviceName}`;
     if (_.isString(this.serviceType)) {
       return `${url}&selectedType=${this.serviceType}`;
@@ -72,8 +72,8 @@ export default class {
     return _.get(this.serviceInfos, 'renew.automatic') || _.get(this.serviceInfos, 'renew.forced');
   }
 
-  hasBeenTerminated() {
-    return this.isInAutoRenew() && _.get(this.serviceInfos, 'renew.deleteAtExpiration');
+  shouldDeleteAtExpiration() {
+    return _.get(this.serviceInfos, 'renew.deleteAtExpiration');
   }
 
   isExpired() {
