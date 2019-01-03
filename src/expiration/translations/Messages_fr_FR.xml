@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="expiration_new_tab">S'ouvre dans un nouvel onglet</translation>
    <translation id="expiration_expired_date" qtlid="382076">Expiré le <strong>{0}</strong></translation>
    <translation id="expiration_renew_date" qtlid="440287">Renouvellement automatique prévu en <strong>{0}</strong></translation>
    <translation id="expiration_resiliation_cancel_label" qtlid="285350">Annuler la résiliation</translation>
