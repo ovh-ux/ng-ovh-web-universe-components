@@ -1,5 +1,5 @@
 import angular from 'angular';
-import '@ovh-ux/ng-payment-method';
+import '@ovh-ux/ng-ovh-payment-method';
 import 'ovh-angular-user-pref';
 import 'ovh-api-services';
 import 'ovh-ui-angular';
