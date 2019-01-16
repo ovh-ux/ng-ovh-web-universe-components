@@ -1,3 +1,21 @@
+# [1.2.0](https://github.com/ovh-ux/web-universe-components/compare/v1.1.0...v1.2.0) (2019-01-16)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([42a05ec](https://github.com/ovh-ux/web-universe-components/commit/42a05ec))
+* **i18n:** retrieve translations ([68edf31](https://github.com/ovh-ux/web-universe-components/commit/68edf31))
+* **i18n:** submit translations ([c7073d5](https://github.com/ovh-ux/web-universe-components/commit/c7073d5))
+* **i18n:** submit translations ([265628f](https://github.com/ovh-ux/web-universe-components/commit/265628f))
+
+
+### Features
+
+* **autorenew-invite:** init component ([#14](https://github.com/ovh-ux/web-universe-components/issues/14)) ([251a6af](https://github.com/ovh-ux/web-universe-components/commit/251a6af))
+* **expiration:** distinguish expiration from resiliation ([#23](https://github.com/ovh-ux/web-universe-components/issues/23)) ([ed507e9](https://github.com/ovh-ux/web-universe-components/commit/ed507e9))
+
+
+
 # [1.1.0](https://github.com/ovh-ux/web-universe-components/compare/v1.1.0-beta.0...v1.1.0) (2019-01-02)
 
 
