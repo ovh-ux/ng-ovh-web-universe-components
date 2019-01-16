@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import wucAllDom from './alldom';
 import wucApi from './api';
+import wucAutorenewInvite from './autorenew-invite';
 import wucChartjs from './chartjs';
 import wucConverter from './converter';
 import wucCharts from './charts';
@@ -29,6 +30,7 @@ angular
   .module(moduleName, [
     wucAllDom,
     wucApi,
+    wucAutorenewInvite,
     wucChartjs,
     wucConverter,
     wucCharts,

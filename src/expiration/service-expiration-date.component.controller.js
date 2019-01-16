@@ -2,10 +2,16 @@ import _ from 'lodash';
 import angular from 'angular';
 import moment from 'moment';
 
+import {
+  DEFAULT_TARGET,
+  RENEW_URL,
+} from './service-expiration-date.component.constant';
+
 export default class {
   /* @ngInject */
-  constructor($scope, $rootScope) {
+  constructor($scope, $rootScope, OvhApiMe) {
     $scope.tr = $rootScope.tr;
+    this.OvhApiMe = OvhApiMe;
   }
 
   $onInit() {
@@ -15,14 +21,28 @@ export default class {
     ) {
       throw new Error('serviceExpirationDate: Missing parameter(s)');
     }
+
+    this.loading = true;
+
+    return this.getOrderUrl()
+      .finally(() => {
+        this.loading = false;
+      });
   }
 
-  getRenewUrl() {
+  getCancelTerminationUrl() {
     const url = `#/billing/autoRenew?searchText=${this.serviceName}`;
     if (_.isString(this.serviceType)) {
       return `${url}&selectedType=${this.serviceType}`;
     }
     return url;
+  }
+
+  getOrderUrl() {
+    return this.OvhApiMe.v6().get().$promise
+      .then(({ ovhSubsidiary }) => {
+        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
+      });
   }
 
   getExpirationClass() {
@@ -48,11 +68,12 @@ export default class {
     return '';
   }
 
-  isAutoRenew() {
-    return (
-      this.serviceInfos.renew
-      && (this.serviceInfos.renew.automatic || this.serviceInfos.renew.forced)
-    );
+  isInAutoRenew() {
+    return _.get(this.serviceInfos, 'renew.automatic') || _.get(this.serviceInfos, 'renew.forced');
+  }
+
+  shouldDeleteAtExpiration() {
+    return _.get(this.serviceInfos, 'renew.deleteAtExpiration');
   }
 
   isExpired() {
