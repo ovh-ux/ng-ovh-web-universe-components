@@ -1,5 +1,5 @@
 <oui-message data-type="info"
-             data-ng-if="$ctrl.serviceInfos && $ctrl.isAutorenewAllowed && !$ctrl.isInAutorenew() && !$ctrl.isExpired() && $ctrl.shouldAskAboutAutorenewSubscription()"
+             data-ng-if="!$ctrl.loading && $ctrl.serviceInfos && $ctrl.isAutorenewAllowed && !$ctrl.isInAutorenew() && !$ctrl.isExpired() && $ctrl.shouldAskAboutAutorenewSubscription()"
              data-on-dismissed="$ctrl.stopBotheringWithAutorenew()">
     <span data-translate="autorenew_alert" data-translate-values="{ product: ('autorenew_alert_' + $ctrl.productType | translate) }"></span>
     <a class="oui-link"
