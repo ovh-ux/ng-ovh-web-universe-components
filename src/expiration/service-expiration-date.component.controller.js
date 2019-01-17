@@ -5,6 +5,7 @@ import moment from 'moment';
 import {
   DEFAULT_TARGET,
   RENEW_URL,
+  TERMINATION_URL,
 } from './service-expiration-date.component.constant';
 
 export default class {
@@ -23,15 +24,20 @@ export default class {
     }
 
     this.loading = true;
+    this.subsidiary = null;
 
-    return this.getOrderUrl()
+    return this.OvhApiMe.v6().get().$promise
+      .then(({ ovhSubsidiary }) => {
+        this.subsidiary = ovhSubsidiary;
+        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
+      })
       .finally(() => {
         this.loading = false;
       });
   }
 
   getCancelTerminationUrl() {
-    const url = `#/billing/autoRenew?searchText=${this.serviceName}`;
+    const url = `${_.get(TERMINATION_URL, this.subsidiary, TERMINATION_URL[DEFAULT_TARGET])}?searchText=${this.serviceName}`;
     if (_.isString(this.serviceType)) {
       return `${url}&selectedType=${this.serviceType}`;
     }
@@ -39,10 +45,7 @@ export default class {
   }
 
   getOrderUrl() {
-    return this.OvhApiMe.v6().get().$promise
-      .then(({ ovhSubsidiary }) => {
-        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
-      });
+    return this.orderUrl;
   }
 
   getExpirationClass() {
