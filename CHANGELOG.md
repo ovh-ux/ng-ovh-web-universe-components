@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/ovh-ux/web-universe-components/compare/v1.2.0...v1.2.1) (2019-01-18)
+
+
+### Bug Fixes
+
+* **autorenew-invite:** add loading condition ([10d2bb6](https://github.com/ovh-ux/web-universe-components/commit/10d2bb6))
+
+
+
 # [1.2.0](https://github.com/ovh-ux/web-universe-components/compare/v1.1.0...v1.2.0) (2019-01-16)
 
 
