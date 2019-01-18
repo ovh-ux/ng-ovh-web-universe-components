@@ -23,10 +23,14 @@ export default class {
       throw new Error('Autorenew invite: Product type is not valid');
     }
 
+    this.loading = true;
     this.preferenceKey = `${this.productType.toUpperCase()}_AUTORENEW_STOP_BOTHER`;
 
     return this.isAutorenewAllowed()
-      .then(() => (this.isAutorenewAllowed ? this.getDisplayConditions() : this.$q.when()));
+      .then(() => (this.isAutorenewAllowed ? this.getDisplayConditions() : this.$q.when()))
+      .finally(() => {
+        this.loading = false;
+      });
   }
 
   getDisplayConditions() {
