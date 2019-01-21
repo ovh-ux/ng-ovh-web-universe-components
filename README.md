@@ -18,14 +18,12 @@ yarn add @ovh-ux/web-universe-components
 ## Usage
 
 ```js
-import 'angular';
+import angular from 'angular';
 import webUniverseComponents from '@ovh-ux/web-universe-components';
 
 angular
   .module('myApp', [
-    …,
-    webUniverseComponents;
-    …,
+    webUniverseComponents,
   ]);
 ```
 
