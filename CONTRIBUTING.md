@@ -1,4 +1,4 @@
-# Contributing to web-universe-components
+# Contributing to ng-ovh-web-universe-components
 
 This project accepts contributions. In order to contribute, you should
 pay attention to a few things:
@@ -17,8 +17,8 @@ The contributions should be submitted through Github Pull Requests.
 
 # Licensing for new files
 
-web-universe-components is licensed under a BSD-3-Clause license. Anything
-contributed to web-universe-components must be released under this license.
+ng-ovh-web-universe-components is licensed under a BSD-3-Clause license. Anything
+contributed to ng-ovh-web-universe-components must be released under this license.
 
 When introducing a new file into the project, please make sure it has a
 copyright header making clear under which license it's being released.
