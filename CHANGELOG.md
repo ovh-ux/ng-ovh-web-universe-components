@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/ovh-ux/web-universe-components/compare/v1.2.1...v1.2.2) (2019-01-29)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([6d5ca46](https://github.com/ovh-ux/web-universe-components/commit/6d5ca46))
+
+
+
 ## [1.2.1](https://github.com/ovh-ux/web-universe-components/compare/v1.2.0...v1.2.1) (2019-01-18)
 
 
