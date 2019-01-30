@@ -1,5 +1,6 @@
 import angular from 'angular';
-import 'ovh-angular-http';
+
+import '@ovh-ux/ng-ovh-http';
 
 import WucAllDom from './domain-alldom.service';
 
@@ -7,7 +8,7 @@ const moduleName = 'wucAllDom';
 
 angular
   .module(moduleName, [
-    'ovh-angular-http',
+    'ngOvhHttp',
   ])
   .service('WucAllDom', WucAllDom);
 
