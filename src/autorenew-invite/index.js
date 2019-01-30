@@ -1,6 +1,7 @@
 import angular from 'angular';
+
 import '@ovh-ux/ng-ovh-payment-method';
-import 'ovh-angular-user-pref';
+import '@ovh-ux/ng-ovh-user-pref';
 import 'ovh-api-services';
 import 'ovh-ui-angular';
 import 'angular-translate';
@@ -14,7 +15,7 @@ const moduleName = 'wucAutorenewInvite';
 angular
   .module(moduleName, [
     'ngOvhPaymentMethod',
-    'ovh-angular-user-pref',
+    'ngOvhUserPref',
     'ovh-api-services',
     'oui',
     'pascalprecht.translate',
