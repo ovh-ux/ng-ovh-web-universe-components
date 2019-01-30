@@ -1,5 +1,6 @@
 import angular from 'angular';
-import 'ovh-angular-http';
+
+import '@ovh-ux/ng-ovh-http';
 import 'ovh-angular-swimming-poll';
 
 import WucEmails from './email-domain.service';
@@ -8,7 +9,7 @@ const moduleName = 'wucEmailDomain';
 
 angular
   .module(moduleName, [
-    'ovh-angular-http',
+    'ngOvhHttp',
     'ovh-angular-swimming-poll',
   ])
   .service('WucEmails', WucEmails);
