@@ -1,6 +1,7 @@
 import angular from 'angular';
 import translate from 'angular-translate';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+
+import '@ovh-ux/ng-translate-async-loader';
 
 import wucCronValidator from '../cron-validator';
 
@@ -17,8 +18,8 @@ const moduleName = 'wucCron';
 
 angular
   .module(moduleName, [
+    'ngTranslateAsyncLoader',
     translate,
-    translateAsyncLoader,
     wucCronValidator,
   ])
   .controller('wucCronEditorCtrl', wucCronEditorCtrl)
