@@ -1,7 +1,7 @@
 import angular from 'angular';
 import translate from 'angular-translate';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
 
+import '@ovh-ux/ng-translate-async-loader';
 import '@ovh-ux/ovh-utils-angular';
 import 'angular-ui-bootstrap';
 
@@ -16,9 +16,9 @@ const moduleName = 'wucTabs';
 angular
   .module(moduleName, [
     'digitalfondue.dftabmenu',
+    'ngTranslateAsyncLoader',
     'ovh-utils-angular',
     translate,
-    translateAsyncLoader,
     'ui.bootstrap',
   ])
   .directive('wucOvhTabs', wucOvhTabsDirective)

@@ -1,7 +1,8 @@
 import angular from 'angular';
-import 'ovh-api-services';
 import translate from 'angular-translate';
-import translateAsyncLoader from '@ovh-ux/translate-async-loader';
+
+import '@ovh-ux/ng-translate-async-loader';
+import 'ovh-api-services';
 
 import WucServiceExpirationDateComponentCtrl from './service-expiration-date.component.controller';
 import wucServiceExpirationDate from './service-expiration-date.component';
@@ -13,9 +14,9 @@ const moduleName = 'wucExpiration';
 
 angular
   .module(moduleName, [
+    'ngTranslateAsyncLoader',
     'ovh-api-services',
     translate,
-    translateAsyncLoader,
   ])
   .component('wucServiceExpirationDate', wucServiceExpirationDate)
   .controller('WucServiceExpirationDateComponentCtrl', WucServiceExpirationDateComponentCtrl)
