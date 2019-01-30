@@ -54,6 +54,7 @@
   "peerDependencies": {
     "@ovh-ux/ng-ovh-http": "^4.0.1-beta.0",
     "@ovh-ux/ng-ovh-payment-method": "^1.1.1",
+    "@ovh-ux/ng-ovh-user-pref": "^1.0.0-beta.0",
     "@ovh-ux/ovh-utils-angular": "^14.0.2",
     "@ovh-ux/translate-async-loader": "^1.0.7",
     "@uirouter/angularjs": "^1.0.0",
@@ -71,7 +72,6 @@
     "lodash": "^3.10.1",
     "moment": "^2.16.0",
     "ovh-angular-swimming-poll": "^3.0.1",
-    "ovh-angular-user-pref": "^1.0.0-alpha.0",
     "ovh-api-services": "^3.28.0",
     "ovh-ui-angular": "^2.23.0",
     "punycode": "^1.2.4"
