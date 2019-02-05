@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v1.2.2...v2.0.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **expiration:** use absolute termination urls ([6f79945](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/6f79945))
+
+
+### Code Refactoring
+
+* add missing ovh prefix to the angular module name ([c6c6abe](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/c6c6abe))
+
+
+### BREAKING CHANGES
+
+* module is now named as `ngOvhWebUniverseComponents`
+
+
+
 ## [1.2.2](https://github.com/ovh-ux/web-universe-components/compare/v1.2.1...v1.2.2) (2019-01-29)
 
 
