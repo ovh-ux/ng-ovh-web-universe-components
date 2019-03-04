@@ -787,10 +787,12 @@
     rollup-pluginutils "^2.3.3"
     slash "^2.0.0"
 
-"@ovh-ux/ng-translate-async-loader@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.0.tgz#df0d155c6c2e38b53704ff4ca9b419f0695a88bf"
-  integrity sha512-CmAT0/rTYN/Niwtuo1pcY+y46nqGCR2dO6+4twqGiRkqu/ksgklZ4weaqF9Xgl/KYLv+zcCmxZf0J1gfXs7kag==
+"@ovh-ux/ng-ovh-swimming-poll@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-swimming-poll/-/ng-ovh-swimming-poll-4.0.0.tgz#16e071b283fed0ab2fe3e2287819793cbf0f159a"
+  integrity sha512-kZDL0SFo2SK6yFDHhyMT7A3r8Q8czQlCKI914vMB5OQrRucX3dCNABnBaft5GKvTmDlBmCdH8ixT/H9IV9vdbA==
+  dependencies:
+    lodash "^4.17.11"
 
 "@ovh-ux/rollup-plugin-less-tilde-importer@^1.0.0-beta.0":
   version "1.0.0-beta.0"
