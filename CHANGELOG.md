@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v2.0.0...v3.0.0) (2019-03-05)
+
+
+### Build System
+
+* **deps:** upgrade ng-ovh-swimming-poll to v4.0.0 ([4285006](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/4285006))
+
+
+### BREAKING CHANGES
+
+* **deps:** replace `ovh-angular-swimming-poll` by `@ovh-ux/ng-ovh-swimming-poll`
+
+
+
 # [2.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v1.2.2...v2.0.0) (2019-02-05)
 
 
