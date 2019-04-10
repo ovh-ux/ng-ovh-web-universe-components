@@ -1,3 +1,18 @@
+# [3.1.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v3.0.0...v3.1.0) (2019-04-10)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([978362b](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/978362b))
+* **i18n:** submit translations ([c6049bf](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/c6049bf))
+
+
+### Features
+
+* **service-status:** display the service status inside a tile ([#44](https://github.com/ovh-ux/ng-ovh-web-universe-components/issues/44)) ([f6958ea](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/f6958ea))
+
+
+
 # [3.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v2.0.0...v3.0.0) (2019-03-05)
 
 
