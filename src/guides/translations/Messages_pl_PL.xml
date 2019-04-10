@@ -4,7 +4,7 @@
    <translation id="guide_add_subclient" qtlid="285486">Domeny zarejestrowanej w OVH i przypisanej do Twojego konta klienta</translation>
    <translation id="guide_add_subcontext" qtlid="285473">Możesz podzielić swój hosting WWW. Opcja ta pozwala na przypisanie do hostingu:</translation>
    <translation id="guide_add_subcreate" qtlid="285525">Utwórz subdomenę</translation>
-   <translation id="guide_add_subnon_client" qtlid="285499">Domeny zarejestrowanej w OVH, ale nie przypisanej do Twojego konta klienta.</translation>
+   <translation id="guide_add_subnon_client" qtlid="285499">Domena zarejestrowana w OVH, ale nie przypisana do Twojego konta klienta.</translation>
    <translation id="guide_add_subnon_registered" qtlid="285512">Domena, która nie jest zarejestrowana w OVH</translation>
    <translation id="guide_add_subnot_installed" qtlid="285538">Co zrobić w przypadku błędu « Strona nie została zainstalowana »?</translation>
    <translation id="guide_add_subscope" qtlid="285460">Przypisanie domeny do hostingu</translation>
