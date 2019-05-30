@@ -183,7 +183,6 @@ export default /* @ngInject */ function productServices(
     return this.getProducts(forceRefresh)
       .then((productsList) => {
         const noCurrentlySelectedProduct = _(selectedProduct.name).isEmpty();
-
         if (noCurrentlySelectedProduct) {
           const currentStateProductId = _($stateParams).get('productId', '');
 
@@ -270,6 +269,4 @@ export default /* @ngInject */ function productServices(
     return OvhApiWorkingStatus.Aapi().get({ product }).$promise
       .then(resp => resp.data);
   };
-
-  this.getProducts(true);
 }
