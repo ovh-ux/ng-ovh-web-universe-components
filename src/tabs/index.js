@@ -4,10 +4,7 @@ import translate from 'angular-translate';
 import '@ovh-ux/ng-translate-async-loader';
 import '@ovh-ux/ovh-utils-angular';
 import 'angular-ui-bootstrap';
-
-/* eslint-disable import/no-webpack-loader-syntax, import/extensions */
-import 'script-loader!df-tab-menu/build/df-tab-menu.min.js';
-/* eslint-enable import/no-webpack-loader-syntax, import/extensions */
+import 'df-tab-menu/build/df-tab-menu.min';
 
 import wucOvhTabsDirective from './tabs.directive';
 

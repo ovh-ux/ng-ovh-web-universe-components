@@ -18,7 +18,7 @@ export default [
         lodash: '_',
         moment: 'moment',
         punycode: 'punycode',
-        URIjs: 'URI',
+        urijs: 'URI',
       },
     },
   }),
