@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v4.0.0...v4.0.1) (2019-06-17)
+
+
+### Performance Improvements
+
+* **product:** avoid products call at init ([#55](https://github.com/ovh-ux/ng-ovh-web-universe-components/issues/55)) ([d23b23a](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/d23b23a))
+
+
+
 # [4.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v3.1.0...v4.0.0) (2019-06-17)
 
 
