@@ -1,3 +1,21 @@
+# [4.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v3.1.0...v4.0.0) (2019-06-17)
+
+
+### Performance Improvements
+
+* rework package.json to improve build performances ([9fef3d0](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/9fef3d0))
+
+
+### BREAKING CHANGES
+
+* * rename URIjs by urijs
+
+Another update:
+* update import of df-tab-menu
+* move bootstrap & ovh-ui-kit to devDependencies
+
+
+
 # [3.1.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v3.0.0...v3.1.0) (2019-04-10)
 
 
