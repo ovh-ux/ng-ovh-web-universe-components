@@ -26,7 +26,7 @@ export default /* @ngInject */ function ($http, $q) {
   angular.forEach(['get', 'put', 'post', 'delete'], (operationType) => {
     self[operationType] = (url, opt) => {
       const options = angular.extend({}, opt);
-      options.method = angular.uppercase(operationType);
+      options.method = operationType.toUpperCase();
       options.url = url;
       return self.operation(options);
     };
