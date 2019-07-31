@@ -2,7 +2,7 @@ import angular from 'angular';
 import translate from 'angular-translate';
 
 import '@ovh-ux/ng-translate-async-loader';
-import '@ovh-ux/ovh-utils-angular';
+import '@ovh-ux/ng-ovh-utils';
 import 'angular-ui-bootstrap';
 import 'df-tab-menu/build/df-tab-menu.min';
 
@@ -14,7 +14,7 @@ angular
   .module(moduleName, [
     'digitalfondue.dftabmenu',
     'ngTranslateAsyncLoader',
-    'ovh-utils-angular',
+    'ngOvhUtils',
     translate,
     'ui.bootstrap',
   ])
