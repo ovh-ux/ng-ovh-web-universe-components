@@ -1,3 +1,17 @@
+# [5.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v4.0.3...v5.0.0) (2019-07-31)
+
+
+### Build System
+
+* **peer-deps:** upgrade to ng-ovh-utils v14.0.3-beta.1 ([#69](https://github.com/ovh-ux/ng-ovh-web-universe-components/issues/69)) ([19bf48e](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/19bf48e))
+
+
+### BREAKING CHANGES
+
+* **peer-deps:** upgrade peer dependency `ovh-utils-angular` to `ng-ovh-utils`
+
+
+
 ## [4.0.3](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v4.0.2...v4.0.3) (2019-07-30)
 
 
