@@ -1,3 +1,17 @@
+# [6.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v5.0.0...v6.0.0) (2019-08-16)
+
+
+### Build System
+
+* bump ovh-api-services to v9.0.0 ([513d97d](https://github.com/ovh-ux/ng-ovh-web-universe-components/commit/513d97d))
+
+
+### BREAKING CHANGES
+
+* major bump of ovh-api-services
+
+
+
 # [5.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v4.0.3...v5.0.0) (2019-07-31)
 
 
