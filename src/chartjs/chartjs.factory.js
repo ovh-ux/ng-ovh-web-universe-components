@@ -1,9 +1,13 @@
 import angular from 'angular';
-import _ from 'lodash';
+import assignIn from 'lodash/assignIn';
+import head from 'lodash/head';
+import isUndefined from 'lodash/isUndefined';
+import last from 'lodash/last';
+import merge from 'lodash/merge';
 
 export default /* @ngInject */ (WUC_CHARTJS) => {
   const WucChartjsFactory = function WucChartjsFactory(data) {
-    _.extend(this, angular.copy(WUC_CHARTJS.squeleton), data);
+    assignIn(this, angular.copy(WUC_CHARTJS.squeleton), data);
   };
 
   /**
@@ -16,7 +20,7 @@ export default /* @ngInject */ (WUC_CHARTJS) => {
    */
   WucChartjsFactory.prototype.addSerie = function addSerie(name, data, opts) {
     const options = opts || {};
-    this.data.datasets.push(_.extend(
+    this.data.datasets.push(assignIn(
       {
         label: name,
         data,
@@ -24,7 +28,7 @@ export default /* @ngInject */ (WUC_CHARTJS) => {
       WUC_CHARTJS.colors[this.data.datasets.length % WUC_CHARTJS.colors.length],
       options.dataset,
     ));
-    return _.last(this.data.datasets);
+    return last(this.data.datasets);
   };
 
   /**
@@ -49,12 +53,12 @@ export default /* @ngInject */ (WUC_CHARTJS) => {
    * @param {Number|undefined} index Index of axis or all
    */
   WucChartjsFactory.prototype.setAxisOptions = function setAxisOptions(axis, options, index) {
-    if (_.isUndefined(index)) {
+    if (isUndefined(index)) {
       this.options.scales[axis].forEach((data) => {
-        _.merge(data, options);
+        merge(data, options);
       });
     } else {
-      _.merge(this.options.scales[index], options);
+      merge(this.options.scales[index], options);
     }
   };
 
@@ -65,8 +69,8 @@ export default /* @ngInject */ (WUC_CHARTJS) => {
   WucChartjsFactory.prototype.setYLabel = function setYLabel(label) {
     if (
       this.options.scales.yAxes.length
-      && _.first(this.options.scales.yAxes)
-      && _.first(this.options.scales.yAxes).scaleLabel
+      && head(this.options.scales.yAxes)
+      && head(this.options.scales.yAxes).scaleLabel
     ) {
       this.options.scales.yAxes[0].scaleLabel.labelString = label;
     }

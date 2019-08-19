@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import uniqueId from 'lodash/uniqueId';
 
 import 'chart.js/dist/Chart.min';
 import 'chartjs-plugin-zoom/chartjs-plugin-zoom';
@@ -15,7 +15,7 @@ export default () => ({
   template,
   link(scope, element, attrs, controller) {
     const canvas = element.children().get(0);
-    canvas.id = _.uniqueId('wucChartjs');
+    canvas.id = uniqueId('wucChartjs');
     controller.ctx = canvas.getContext('2d'); // eslint-disable-line no-param-reassign
   },
   controller($scope) {

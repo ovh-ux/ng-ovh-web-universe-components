@@ -1,5 +1,5 @@
 import angular from 'angular';
-import _ from 'lodash';
+import isString from 'lodash/isString';
 import punycode from 'punycode';
 import ipaddr from 'ipaddr.js'; // eslint-disable-line import/extensions
 import URI from 'urijs';
@@ -9,7 +9,7 @@ export default function () {
   this.MAX_DOMAIN_LENGTH = 63;
 
   this.isValidIpv4 = function isValidIpv4(ip) {
-    if (ip != null && _.isString(ip) && ip.split('.').length === 4) {
+    if (ip != null && isString(ip) && ip.split('.').length === 4) {
       return ipaddr.IPv4.isValid(ip);
     }
 

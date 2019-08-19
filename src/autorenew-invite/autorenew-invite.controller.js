@@ -1,4 +1,7 @@
-import _ from 'lodash';
+import get from 'lodash/get';
+import includes from 'lodash/includes';
+import isArray from 'lodash/isArray';
+import isEmpty from 'lodash/isEmpty';
 import moment from 'moment';
 
 export default class {
@@ -19,7 +22,7 @@ export default class {
   }
 
   $onInit() {
-    if (_.isEmpty(this.productType)) {
+    if (isEmpty(this.productType)) {
       throw new Error('Autorenew invite: Product type is not valid');
     }
 
@@ -41,7 +44,7 @@ export default class {
   hasPaymentMean() {
     return this.ovhPaymentMethod.getAllPaymentMethods()
       .then((paymentMethods) => {
-        this.hasPaymentMean = _.isArray(paymentMethods) && !_.isEmpty(paymentMethods);
+        this.hasPaymentMean = isArray(paymentMethods) && !isEmpty(paymentMethods);
         return this.hasPaymentMean;
       });
   }
@@ -49,7 +52,7 @@ export default class {
   isAutorenewAllowed() {
     return this.OvhApiMe.v6().get().$promise
       .then(({ ovhSubsidiary }) => {
-        this.isAutorenewAllowed = _.includes(
+        this.isAutorenewAllowed = includes(
           this.WUC_SUBSIDIARIES_WITH_OPTIONAL_AUTORENEW,
           ovhSubsidiary,
         );
@@ -70,11 +73,11 @@ export default class {
   }
 
   shouldAskAboutAutorenewSubscription() {
-    return !_.includes(this.productAutorenewPreferences, this.serviceInfos.domain);
+    return !includes(this.productAutorenewPreferences, this.serviceInfos.domain);
   }
 
   isInAutorenew() {
-    return _.get(this.serviceInfos, 'renew.automatic') || _.get(this.serviceInfos, 'renew.forced');
+    return get(this.serviceInfos, 'renew.automatic') || get(this.serviceInfos, 'renew.forced');
   }
 
   isExpired() {

@@ -1,5 +1,5 @@
-import _ from 'lodash';
+import snakeCase from 'lodash/snakeCase';
 
 export default () => ({
-  tr: enumValue => _.snakeCase(enumValue).toUpperCase(),
+  tr: enumValue => snakeCase(enumValue).toUpperCase(),
 });

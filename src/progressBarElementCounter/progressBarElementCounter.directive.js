@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import fill from 'lodash/fill';
 
 import template from './progressBarElementCounter.html';
 
@@ -15,7 +15,7 @@ export default () => ({
     $scope.fakeElements = [];
     $scope.$watch('maxElements', (maxElements) => {
       if (maxElements != null && maxElements > 0) {
-        $scope.fakeElements = _.fill(new Array(maxElements), true);
+        $scope.fakeElements = fill(new Array(maxElements), true);
       }
     });
   },
