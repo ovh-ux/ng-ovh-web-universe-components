@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import isArray from 'lodash/isArray';
+import isEmpty from 'lodash/isEmpty';
 
 export default class {
   /* @ngInject */
@@ -1248,7 +1249,7 @@ export default class {
       )
       .then((data) => {
         // error codes are returned in success
-        if (_(data.error).isArray() && !_(data.error).isEmpty()) {
+        if (isArray(data.error) && !isEmpty(data.error)) {
           throw data.error;
         }
 

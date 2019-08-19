@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import get from 'lodash/get';
+import isString from 'lodash/isString';
 import angular from 'angular';
 import moment from 'moment';
 
@@ -18,7 +19,7 @@ export default class {
   $onInit() {
     if (
       !angular.isObject(this.serviceInfos)
-      || !_.isString(this.serviceName)
+      || !isString(this.serviceName)
     ) {
       throw new Error('serviceExpirationDate: Missing parameter(s)');
     }
@@ -29,7 +30,7 @@ export default class {
     return this.OvhApiMe.v6().get().$promise
       .then(({ ovhSubsidiary }) => {
         this.subsidiary = ovhSubsidiary;
-        this.orderUrl = `${_.get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
+        this.orderUrl = `${get(RENEW_URL, ovhSubsidiary, RENEW_URL[DEFAULT_TARGET])}${this.serviceInfos.domain}`;
       })
       .finally(() => {
         this.loading = false;
@@ -37,8 +38,8 @@ export default class {
   }
 
   getCancelTerminationUrl() {
-    const url = `${_.get(TERMINATION_URL, this.subsidiary, TERMINATION_URL[DEFAULT_TARGET])}?searchText=${this.serviceName}`;
-    if (_.isString(this.serviceType)) {
+    const url = `${get(TERMINATION_URL, this.subsidiary, TERMINATION_URL[DEFAULT_TARGET])}?searchText=${this.serviceName}`;
+    if (isString(this.serviceType)) {
       return `${url}&selectedType=${this.serviceType}`;
     }
     return url;
@@ -72,11 +73,11 @@ export default class {
   }
 
   isInAutoRenew() {
-    return _.get(this.serviceInfos, 'renew.automatic') || _.get(this.serviceInfos, 'renew.forced');
+    return get(this.serviceInfos, 'renew.automatic') || get(this.serviceInfos, 'renew.forced');
   }
 
   shouldDeleteAtExpiration() {
-    return _.get(this.serviceInfos, 'renew.deleteAtExpiration');
+    return get(this.serviceInfos, 'renew.deleteAtExpiration');
   }
 
   isExpired() {

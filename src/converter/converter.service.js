@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import findIndex from 'lodash/findIndex';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
 
 export default class {
   /* @ngInject */
@@ -15,11 +17,11 @@ export default class {
    * @return {number}      the number converted
    */
   convertToOctet(nb, unit, system = 'international') {
-    if (!_.isNumber(Number(nb)) || !_.isString(unit)) {
+    if (!isNumber(Number(nb)) || !isString(unit)) {
       throw new Error('Wrong parameter(s)');
     }
 
-    const baseUnit = _.findIndex(this.WucConverterFactory[system].units, { unit });
+    const baseUnit = findIndex(this.WucConverterFactory[system].units, { unit });
 
     if (baseUnit < 0) {
       throw new Error('Wrong unit given');
@@ -29,8 +31,8 @@ export default class {
   }
 
   getUnitRange(minUnit, maxUnit, system = 'international') {
-    const minIndex = _.findIndex(this.WucConverterFactory[system].units, { unit: minUnit });
-    const maxIndex = _.findIndex(this.WucConverterFactory[system].units, { unit: maxUnit });
+    const minIndex = findIndex(this.WucConverterFactory[system].units, { unit: minUnit });
+    const maxIndex = findIndex(this.WucConverterFactory[system].units, { unit: maxUnit });
     if (minIndex > maxIndex) {
       throw new Error('Max unit is lower than min unit');
     }

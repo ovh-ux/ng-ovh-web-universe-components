@@ -1,6 +1,8 @@
 import angular from 'angular';
 import $ from 'jquery';
-import _ from 'lodash';
+import findIndex from 'lodash/findIndex';
+import remove from 'lodash/remove';
+import uniq from 'lodash/uniq';
 
 import template from './file-editor.html';
 
@@ -76,7 +78,7 @@ export default /* @ngInject */ ($anchorScroll, $location) => ({
     };
 
     $scope.removeItem = (item) => {
-      _.remove($scope.ngModel, it => it === item);
+      remove($scope.ngModel, it => it === item);
     };
 
     $scope.removeAll = () => {
@@ -88,7 +90,7 @@ export default /* @ngInject */ ($anchorScroll, $location) => ({
     };
 
     $scope.goToNextError = () => {
-      const nextError = _.findIndex(
+      const nextError = findIndex(
         $scope.ngModel,
         item => !$scope.wucFileEditorItemValidator(item),
       );
@@ -107,7 +109,7 @@ export default /* @ngInject */ ($anchorScroll, $location) => ({
     $scope.$watch('fileModel.value', () => {
       $scope.loader = true;
       if ($scope.fileModel.value) {
-        $scope.ngModel = _.uniq($scope.fileModel.value.trim().split(/\s/g));
+        $scope.ngModel = uniq($scope.fileModel.value.trim().split(/\s/g));
 
         if (!$scope.wucFileEditorMatchExistingItems) {
           $scope.ngModel = $scope.ngModel
