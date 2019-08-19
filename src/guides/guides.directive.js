@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import get from 'lodash/get';
 
 import template from './guides.html';
 
@@ -31,12 +31,12 @@ export default /* @ngInject */ (OvhApiMe, WUC_GUIDES) => ({
         .get()
         .$promise
         .then((user) => {
-          const ovhSubsidiary = _.get(user, 'ovhSubsidiary', 'FR');
+          const ovhSubsidiary = get(user, 'ovhSubsidiary', 'FR');
 
-          $scope.guideConfiguration = _.get(
+          $scope.guideConfiguration = get(
             WUC_GUIDES,
             `${ovhSubsidiary}.${$scope.wucGuidesList}`,
-            _.get(
+            get(
               WUC_GUIDES,
               `FR.${$scope.wucGuidesList}`,
               [],

@@ -1,5 +1,8 @@
 import angular from 'angular';
-import _ from 'lodash';
+import keys from 'lodash/keys';
+import pickBy from 'lodash/pickBy';
+import range from 'lodash/range';
+import uniq from 'lodash/uniq';
 
 export default function cronValidator() {
   const self = this;
@@ -125,11 +128,11 @@ export default function cronValidator() {
   });
 
   this.getSimpleModeItems = (cronValue, field) => {
-    let selectValuesTempo = _.pick(
+    let selectValuesTempo = pickBy(
       cronValue.simple.items[field],
       selectValue => !!selectValue,
     );
-    selectValuesTempo = _.keys(selectValuesTempo);
+    selectValuesTempo = keys(selectValuesTempo);
     return selectValuesTempo.sort((a, b) => a - b);
   };
 
@@ -273,10 +276,10 @@ export default function cronValidator() {
             if (from === to) {
               clearedItems.push(from);
             } else if (from < to) {
-              clearedItems = clearedItems.concat(_.range(from, to + 1));
+              clearedItems = clearedItems.concat(range(from, to + 1));
             } else if (to === 0) {
               to = 7;
-              clearedItems = clearedItems.concat(_.range(from, to + 1));
+              clearedItems = clearedItems.concat(range(from, to + 1));
               if (clearedItems.indexOf(7) !== -1) {
                 // @TODO this is crapy, improve it later
                 clearedItems[clearedItems.indexOf(7)] = 0;
@@ -286,7 +289,7 @@ export default function cronValidator() {
             clearedItems.push(splittedItem);
           }
         });
-        clearedItems = _.uniq(clearedItems);
+        clearedItems = uniq(clearedItems);
         cronValue.simple.items[key] = {}; // todo
 
         angular.forEach(clearedItems, (splittedVal) => {

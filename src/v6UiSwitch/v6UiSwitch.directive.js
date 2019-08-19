@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
 export default () => {
   const V6UiSwitchState = function v6UiSwitchState(options) {
@@ -94,11 +95,11 @@ export default () => {
   });
 
   function link($scope, $element, attrs) {
-    let Switch = _.get($scope, attrs.ngModel);
+    let Switch = get($scope, attrs.ngModel);
 
     if (!Switch) {
       Switch = new V6UiSwitchState();
-      _.set($scope, attrs.ngModel, Switch);
+      set($scope, attrs.ngModel, Switch);
       return;
     }
 
@@ -110,7 +111,7 @@ export default () => {
     }
 
     Switch = new V6UiSwitchState(Switch);
-    _.set($scope, attrs.ngModel, Switch);
+    set($scope, attrs.ngModel, Switch);
   }
 
   return {

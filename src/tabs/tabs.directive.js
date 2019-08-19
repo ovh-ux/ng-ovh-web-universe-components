@@ -1,5 +1,5 @@
 import angular from 'angular';
-import _ from 'lodash';
+import set from 'lodash/set';
 
 import template from './tabs.html';
 
@@ -17,9 +17,9 @@ export default /* @ngInject */ (Navigator, $rootScope) => ({
   },
 
   link(scope) {
-    _.set(scope, 'isActive', tab => (scope.selectedTab === tab ? 'active' : ''));
+    set(scope, 'isActive', tab => (scope.selectedTab === tab ? 'active' : ''));
 
-    _.set(scope, 'execMenuAction', (action) => {
+    set(scope, 'execMenuAction', (action) => {
       switch (action.type) {
         case 'SWITCH_TABS':
           scope.setSelectedTab(action.target);

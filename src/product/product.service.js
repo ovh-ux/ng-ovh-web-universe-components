@@ -1,5 +1,13 @@
 import angular from 'angular';
-import _ from 'lodash';
+import find from 'lodash/find';
+import forEach from 'lodash/forEach';
+import get from 'lodash/get';
+import intersection from 'lodash/intersection';
+import isEmpty from 'lodash/isEmpty';
+import map from 'lodash/map';
+import remove from 'lodash/remove';
+import sortBy from 'lodash/sortBy';
+import uniqBy from 'lodash/uniqBy';
 
 export default /* @ngInject */ function productServices(
   $rootScope,
@@ -59,10 +67,10 @@ export default /* @ngInject */ function productServices(
                 if (result.status < 300) {
                   productsByType = result.data;
 
-                  _.forEach(data[2], (email) => {
+                  forEach(data[2], (email) => {
                     const splitted = email.split('@');
                     if (splitted.length >= 2) {
-                      if (_.find(productsByType.emails, { name: splitted[1] }) == null) {
+                      if (find(productsByType.emails, { name: splitted[1] }) == null) {
                         const domain = splitted[1];
                         productsByType.emails.push({
                           displayName: domain,
@@ -80,10 +88,10 @@ export default /* @ngInject */ function productServices(
                       && productsByType.platforms
                       && productsByType.platforms.length) {
                     // 1. Remove all occurances and put them in other var
-                    let exchangeOld = _.remove(productsByType.platforms, a => a.type === 'EXCHANGE_OLD');
+                    let exchangeOld = remove(productsByType.platforms, a => a.type === 'EXCHANGE_OLD');
                     if (exchangeOld && exchangeOld.length) {
                       // 2. Merge all domain to an uniq array
-                      exchangeOld = _.uniq(exchangeOld, a => a.name);
+                      exchangeOld = uniqBy(exchangeOld, a => a.name);
 
                       // 3. Push to products array
                       productsByType.platforms = productsByType.platforms.concat(exchangeOld);
@@ -94,9 +102,9 @@ export default /* @ngInject */ function productServices(
                     products = [];
                   }
 
-                  const allDomains = _.pluck(productsByType.domains, 'name');
-                  const allDomainsOnly = _.pluck(productsByType.domains.filter(x => x.type === 'DOMAIN'), 'name');
-                  const allZones = _.pluck(productsByType.domains.filter(x => x.type === 'ZONE' && allDomainsOnly.indexOf(x.name) === -1), 'name');
+                  const allDomains = map(productsByType.domains, 'name');
+                  const allDomainsOnly = map(productsByType.domains.filter(x => x.type === 'DOMAIN'), 'name');
+                  const allZones = map(productsByType.domains.filter(x => x.type === 'ZONE' && allDomainsOnly.indexOf(x.name) === -1), 'name');
                   let productDomains = allDomains;
 
                   if (allDoms && allDoms.length > 0) {
@@ -111,7 +119,7 @@ export default /* @ngInject */ function productServices(
                             displayName: allDom,
                             hasSubComponent: true,
                             type: 'ALL_DOM',
-                            subProducts: _.intersection(allDomains, domains).map(d => ({
+                            subProducts: intersection(allDomains, domains).map(d => ({
                               name: d,
                               displayName: d,
                               allDomName: allDom,
@@ -128,7 +136,7 @@ export default /* @ngInject */ function productServices(
                             .filter(domain => productDomains.indexOf(domain.name) !== -1);
 
                           productsByType.domains = productsByType.allDoms
-                            .concat(_.sortBy(d, elt => elt.name));
+                            .concat(sortBy(d, elt => elt.name));
                         }
 
                         ['domains', 'hostings', 'exchanges', 'sharepoints', 'vps', 'cdns', 'emails', 'licenseOffice', 'allDoms', 'emailPros'].forEach((type) => {
@@ -182,11 +190,11 @@ export default /* @ngInject */ function productServices(
 
     return this.getProducts(forceRefresh)
       .then((productsList) => {
-        const noCurrentlySelectedProduct = _(selectedProduct.name).isEmpty();
+        const noCurrentlySelectedProduct = isEmpty(selectedProduct.name);
         if (noCurrentlySelectedProduct) {
-          const currentStateProductId = _($stateParams).get('productId', '');
+          const currentStateProductId = get($stateParams, 'productId', '');
 
-          if (_(currentStateProductId).isEmpty()) {
+          if (isEmpty(currentStateProductId)) {
             return {
               name: '',
               organization: '',
@@ -195,20 +203,20 @@ export default /* @ngInject */ function productServices(
           }
 
           selectedProduct.name = currentStateProductId;
-          selectedProduct.type = _($rootScope).get('currentSectionInformation', '').toUpperCase();
-          selectedProduct.organization = _($stateParams).get('organization', '');
+          selectedProduct.type = get($rootScope, 'currentSectionInformation', '').toUpperCase();
+          selectedProduct.organization = get($stateParams, 'organization', '');
         }
 
         let productMatchingSelectedProduct = null;
 
-        _(productsList).forEach((product) => {
+        forEach(productsList, (product) => {
           if (currentProductMatchesSelectedProduct(product)) {
             productMatchingSelectedProduct = product;
             return false;
           }
 
           if (product.hasSubComponent) {
-            _(product.subProducts).forEach((subProduct) => {
+            forEach(product.subProducts, (subProduct) => {
               if (currentProductMatchesSelectedProduct(subProduct)) {
                 productMatchingSelectedProduct = subProduct;
                 return false;
