@@ -1,3 +1,7 @@
+## [6.0.1](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v6.0.0...v6.0.1) (2019-08-19)
+
+
+
 # [6.0.0](https://github.com/ovh-ux/ng-ovh-web-universe-components/compare/v5.0.0...v6.0.0) (2019-08-16)
 
 
